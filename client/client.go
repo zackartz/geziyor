@@ -7,7 +7,7 @@ import (
 	"github.com/chromedp/cdproto/dom"
 	"github.com/chromedp/cdproto/network"
 	"github.com/chromedp/chromedp"
-	"github.com/geziyor/geziyor/internal"
+	"github.com/zackartz/geziyor/internal"
 	"golang.org/x/net/html/charset"
 	"golang.org/x/text/transform"
 	"io"

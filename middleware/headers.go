@@ -1,7 +1,7 @@
 package middleware
 
 import (
-	"github.com/geziyor/geziyor/client"
+	"github.com/zackartz/geziyor/client"
 )
 
 // Headers sets default request headers
