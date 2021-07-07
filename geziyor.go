@@ -70,6 +70,12 @@ func NewGeziyor(opt *Options) *Geziyor {
 		},
 		metrics: metrics.NewMetrics(opt.MetricsType),
 	}
+	
+	chromedp_opts := chromedp.DefaultExecAllocatorOptions[:]
+	
+	if opt.BrowserSandbox {
+		chromedp_opts = append(chromedp_opts, chromedp.NoSandbox)
+	}
 
 	// Client
 	geziyor.Client = client.NewClient(&client.Options{
@@ -78,7 +84,7 @@ func NewGeziyor(opt *Options) *Geziyor {
 		RetryTimes:            opt.RetryTimes,
 		RetryHTTPCodes:        opt.RetryHTTPCodes,
 		RemoteAllocatorURL:    opt.BrowserEndpoint,
-		AllocatorOptions:      chromedp.DefaultExecAllocatorOptions[:],
+		AllocatorOptions:      chromedp_opts,
 	})
 	if opt.Cache != nil {
 		geziyor.Client.Transport = &cache.Transport{

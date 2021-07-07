@@ -20,6 +20,10 @@ type Options struct {
 	// For example: ws://localhost:3000
 	BrowserEndpoint string
 
+	// Sandbox Mode for chrome in docker containers.
+	// Ignored if BrowserEndpoint is set.	
+	BrowserSandbox bool
+
 	// Cache storage backends.
 	// - Memory
 	// - Disk
